@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+// body{
+//     padding-left: 2cm;
+//     padding-right: 2cm;
+// }
+
+
+
+
+input.ng-invalid.ng-touched{
+    border: 1px solid rgb(233, 89, 89);
+}
+.error-message{
+    color:rgb(233, 89, 89) ;
+}
+td{
+    color: grey;
+    background-color: #212429;
+}
+th{
+     color: white;
+     background-color:#212429 ;
+}

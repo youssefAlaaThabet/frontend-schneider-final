@@ -1,0 +1,53 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <br>
+<br>
+<table style="margin-left: 1cm;margin-right: 1cm;width: 30cm;" class="table">
+    <thead>
+        <tr>
+            <td  style="font-weight: bolder;"> <H3>Order Summary </H3> You have  {{count}}  items in Your Shopping Cart.</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of products">
+                <td   *ngIf="item.number!>0">{{item.number!}} X {{item.name}}</td>
+                <td *ngIf="item.number!>0 "> {{item.price!*item.number!}}  L.E </td> 
+        </tr>
+        <tr>
+            <td style="font-weight: bolder; color: black;">Total</td>
+            <td style="font-weight: bolder; color: black;"> {{TotalPrice()}} L.E</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+<div style=" margin-left: 1cm;background-color: whitesmoke; width: 15cm;" class="row justify-content-center">
+  <div  class="col-6">  
+    <br>  
+<h2>Shipping</h2>
+
+<form (ngSubmit)="onSubmit()" [formGroup]="userFormGroup">  
+   <div class="mb-3">
+     <label for="exampleInputPassword1" class="form-label">Specify another Address if needed</label>
+     <textarea class="form-control" id="exampleFormControlTextarea1" formControlName="address" rows="3"></textarea>
+   </div>
+   
+   <br>
+   <button type="submit" class="btn btn-dark"  >Confirm Order</button>
+   </form>
+  </div>
+  </div>

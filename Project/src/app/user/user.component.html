@@ -1,0 +1,64 @@
+
+
+<br>
+<br>
+    <div style="background-color: whitesmoke; width: 15cm;margin-left: 12cm;" class="row justify-content-center">
+      <div  class="col-6">  
+        <br>  
+   <h2>Sign in</h2>
+ 
+ 
+   <form (ngSubmit)="onSubmit()" [formGroup]="userFormGroup">
+       
+       <div class="mb-3">
+         <label for="exampleInputPassword1" class="form-label">UserName</label>
+         <input type="text" class="form-control" id="Name"formControlName="name">
+          <span class="error-message" *ngIf="!userFormGroup.get('name')?.valid && userFormGroup.get('name')?.touched ">User Name is required</span>
+       </div>
+       <div class="mb-3">
+         <label for="exampleInputEmail1" class="form-label">Address</label>
+         <input type="text" 
+         class="form-control" 
+         id="address"
+         formControlName="address"
+         >
+         <span class="error-message" *ngIf=" !userFormGroup.get('address')?.valid && userFormGroup.get('address')?.touched "> Address is required</span>
+       </div>
+       <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Phone Number</label>
+        <input type="text" 
+        class="form-control" 
+        id="phone"
+        formControlName="phone"
+        >
+        <span class="error-message" *ngIf=" !userFormGroup.get('phone')?.valid && userFormGroup.get('phone')?.touched ">Phone Number is required</span>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email</label>
+        <input type="text" 
+        class="form-control" 
+        id="email"
+        formControlName="email"
+        >
+        <span class="error-message" *ngIf=" !userFormGroup.get('email')?.valid && userFormGroup.get('email')?.touched "> Email is required</span>
+      </div>
+      <div>
+        <label for="exampleInputEmail1" class="form-label">Gender</label>
+
+        <select formControlName= "gender" style="width: 10cm;" class=" form-select "  >
+          <option>Male</option>
+          <option>Female</option>
+        </select>
+        <br>
+        <br>
+      </div>
+       <button type="submit" class="btn btn-dark" [disabled]="!userFormGroup.valid" >Sign in</button>
+       <div style="color:blue ;">{{message}}</div>
+       <br>
+     </form>
+   </div>
+ </div>
+ <h1></h1>
+ <div>
+ 
+ </div>

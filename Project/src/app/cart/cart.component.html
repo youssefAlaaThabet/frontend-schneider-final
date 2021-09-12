@@ -1,0 +1,42 @@
+<br>
+<h1 style="font-weight: bolder;margin-left: 1cm;">My Cart</h1>
+<br>
+<table style="margin-left: 1cm;margin-right: 1cm;width: 30cm;" class="table">
+    <thead>
+        <tr>
+            <td  style="font-weight: bolder;">#</td>
+            <td  style="font-weight: bolder;">Product</td>
+            <td style="font-weight: bolder;">Price</td>
+            <td style="font-weight: bolder;">Quantity</td>
+            <td style="font-weight: bolder;">Total Price</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of products">
+                <td *ngIf="item.number!>0" ><img style="width:2.5cm;height:2.5cm" src={{item.image}} alt=""></td>
+                <td   *ngIf="item.number!>0">{{item.name}}</td>
+                <td *ngIf="item.number!>0 "> {{item.price}}  L.E </td>
+
+                <td *ngIf="item.number!>0"><button style="font-size: medium;padding: 2px 4px;float:left;" class= "btn btn-primary"(click)= "Subtract(item)">-</button>  <span style="margin-left: 0.5cm;">{{item.number}}</span>    <button style="padding: 2px 2px;font-size: medium;margin-left: 0.5cm;" class= "btn btn-primary" (click)= "Add(item)">+</button> 
+                </td>
+                <td *ngIf="item.number!>0 "> {{item.price!*item.number!}}  L.E </td> 
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+            <td style="font-weight: bolder; color: black;">{{TotalPrice()}}  L.E</td>
+        </tr>
+        <tr>
+
+             <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td ><button [disabled]="!checkSum()" [routerLink]="['/Shipping']" class="btn btn-primary">Checkout</button></td>
+
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,22 @@
+
+<div *ngFor="let item of products">
+  <div *ngIf="item.category==Category || Category=='All' ">
+<div  class="card" style="height:9.5cm;width: 20rem; margin-bottom:1cm ;float: right;margin-right:1cm;margin-left: 1cm;">
+    <img style="height: 5cm;" src={{item.image}} class="card-img-top" alt="...">
+    <div class="card-body">
+      <hr style="background-color: black;">
+      
+      <h5 class="card-title">{{item.name}}</h5>
+      <p>{{item.price}} L.E</p>
+      <div  *ngIf="item.number">  
+      <button  style="float: left;" class= "btn btn-primary"(click)= "subtract(item)">-</button>
+     <h6 style="float: left; margin-left: 0.5cm;margin-top: 0.2cm;">{{item.number}}</h6>
+      <button style="float: left;margin-left: 0.5cm;" class= "btn btn-primary" (click)= "add(item)">+</button> 
+    </div>
+      <a *ngIf="!item.number " (click)="submit(item.id)" class="btn btn-primary">Add To Cart</a>
+    </div>
+  </div>
+</div>
+  </div>
+  
+  
